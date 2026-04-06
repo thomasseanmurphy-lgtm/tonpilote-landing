@@ -1,0 +1,590 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ton Pilote | L'assistant qui connaît votre entreprise</title>
+    <meta name="description" content="Un assistant IA forme sur votre entreprise. Vos dossiers, vos finances, vos process. Il n'oublie jamais rien.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'Inter', -apple-system, sans-serif;
+            color: #1a1a1a;
+            background: #ffffff;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        /* --- NAV --- */
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 100;
+            background: rgba(255, 255, 255, 0.92);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+            padding: 0 2rem;
+        }
+
+        nav .nav-inner {
+            max-width: 1100px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 64px;
+        }
+
+        .nav-logo {
+            font-family: 'DM Serif Display', serif;
+            font-size: 1.3rem;
+            color: #1a1a1a;
+            text-decoration: none;
+        }
+
+        .nav-cta {
+            display: inline-block;
+            padding: 0.5rem 1.4rem;
+            background: #1a1a1a;
+            color: #ffffff;
+            text-decoration: none;
+            font-size: 0.85rem;
+            font-weight: 500;
+            border-radius: 6px;
+            transition: background 0.2s;
+        }
+
+        .nav-cta:hover { background: #333; }
+
+        /* --- HERO --- */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 6rem 2rem 4rem;
+            max-width: 860px;
+            margin: 0 auto;
+        }
+
+        .hero-label {
+            font-size: 0.8rem;
+            font-weight: 500;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            color: #888;
+            margin-bottom: 2rem;
+        }
+
+        h1 {
+            font-family: 'DM Serif Display', serif;
+            font-size: clamp(2.4rem, 6vw, 4rem);
+            font-weight: 400;
+            line-height: 1.15;
+            color: #000000;
+            margin-bottom: 2rem;
+            letter-spacing: -0.01em;
+        }
+
+        .hero-sub {
+            font-size: 1.15rem;
+            line-height: 1.7;
+            color: #555;
+            max-width: 560px;
+            margin-bottom: 3rem;
+        }
+
+        .hero-cta {
+            display: inline-block;
+            padding: 0.9rem 2.2rem;
+            background: #1a1a1a;
+            color: #ffffff;
+            text-decoration: none;
+            font-size: 0.95rem;
+            font-weight: 500;
+            border-radius: 6px;
+            transition: background 0.2s;
+        }
+
+        .hero-cta:hover { background: #333; }
+
+        /* --- DIVIDER --- */
+        .divider {
+            width: 1px;
+            height: 80px;
+            background: #d0d0d0;
+            margin: 0 auto;
+        }
+
+        /* --- SECTIONS --- */
+        .section {
+            padding: 6rem 2rem;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        .section-label {
+            font-size: 0.75rem;
+            font-weight: 500;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            color: #999;
+            margin-bottom: 1.5rem;
+        }
+
+        .section h2 {
+            font-family: 'DM Serif Display', serif;
+            font-size: clamp(1.8rem, 4vw, 2.6rem);
+            font-weight: 400;
+            color: #000;
+            margin-bottom: 1.5rem;
+            line-height: 1.2;
+        }
+
+        .section-text {
+            font-size: 1.05rem;
+            line-height: 1.8;
+            color: #555;
+            max-width: 600px;
+        }
+
+        /* --- PROBLEM (split layout like Sahara) --- */
+        .problem-section {
+            padding: 6rem 2rem;
+            max-width: 1100px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: start;
+        }
+
+        .problem-section h2 {
+            font-family: 'DM Serif Display', serif;
+            font-size: clamp(1.8rem, 4vw, 2.6rem);
+            font-weight: 400;
+            color: #000;
+            line-height: 1.2;
+        }
+
+        .problem-right {
+            font-size: 1.05rem;
+            line-height: 1.8;
+            color: #555;
+        }
+
+        .problem-right p { margin-bottom: 1rem; }
+
+        .problem-right strong { color: #1a1a1a; }
+
+        /* --- FEATURES GRID --- */
+        .features-section {
+            padding: 6rem 2rem;
+            background: #fafafa;
+        }
+
+        .features-inner {
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 3rem;
+            margin-top: 3rem;
+        }
+
+        .feature-card {
+            padding: 0;
+        }
+
+        .feature-number {
+            font-size: 0.75rem;
+            font-weight: 500;
+            letter-spacing: 0.1em;
+            color: #bbb;
+            margin-bottom: 1rem;
+        }
+
+        .feature-card h3 {
+            font-family: 'DM Serif Display', serif;
+            font-size: 1.3rem;
+            font-weight: 400;
+            color: #000;
+            margin-bottom: 0.8rem;
+        }
+
+        .feature-card p {
+            font-size: 0.92rem;
+            line-height: 1.7;
+            color: #666;
+        }
+
+        /* --- TRUST --- */
+        .trust-section {
+            padding: 4rem 2rem;
+            border-top: 1px solid #eee;
+            border-bottom: 1px solid #eee;
+        }
+
+        .trust-inner {
+            max-width: 1100px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: center;
+            gap: 4rem;
+        }
+
+        .trust-item {
+            text-align: center;
+        }
+
+        .trust-item strong {
+            display: block;
+            font-size: 0.9rem;
+            color: #1a1a1a;
+            font-weight: 600;
+            margin-bottom: 0.3rem;
+        }
+
+        .trust-item span {
+            font-size: 0.82rem;
+            color: #888;
+        }
+
+        /* --- CONTACT --- */
+        .contact-section {
+            padding: 8rem 2rem;
+            text-align: center;
+        }
+
+        .contact-section h2 {
+            font-family: 'DM Serif Display', serif;
+            font-size: clamp(1.8rem, 4vw, 2.6rem);
+            font-weight: 400;
+            color: #000;
+            margin-bottom: 2rem;
+        }
+
+        .contact-info {
+            font-size: 1rem;
+            color: #555;
+            line-height: 2;
+        }
+
+        .contact-info a {
+            color: #1a1a1a;
+            text-decoration: none;
+            font-weight: 500;
+            border-bottom: 1px solid #ccc;
+            transition: border-color 0.2s;
+        }
+
+        .contact-info a:hover { border-color: #1a1a1a; }
+
+        .conference-badge {
+            display: inline-block;
+            margin-top: 2.5rem;
+            padding: 0.7rem 1.6rem;
+            border: 1px solid #ddd;
+            border-radius: 50px;
+            font-size: 0.85rem;
+            color: #555;
+            font-weight: 500;
+        }
+
+        /* --- FOOTER --- */
+        footer {
+            padding: 2rem;
+            text-align: center;
+            font-size: 0.78rem;
+            color: #bbb;
+            border-top: 1px solid #f0f0f0;
+        }
+
+        /* --- MOBILE --- */
+        @media (max-width: 768px) {
+            nav { padding: 0 1.2rem; }
+            .hero { padding: 5rem 1.5rem 3rem; min-height: 90vh; }
+            .problem-section {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+                padding: 4rem 1.5rem;
+            }
+            .features-grid {
+                grid-template-columns: 1fr;
+                gap: 2.5rem;
+            }
+            .features-section { padding: 4rem 1.5rem; }
+            .section { padding: 4rem 1.5rem; }
+            .trust-inner {
+                flex-direction: column;
+                gap: 1.5rem;
+            }
+            .contact-section { padding: 5rem 1.5rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- NAV -->
+    <nav>
+        <div class="nav-inner">
+            <a href="/" class="nav-logo">Ton Pilote</a>
+            <a href="#contact" class="nav-cta">Nous contacter</a>
+        </div>
+    </nav>
+
+    <!-- HERO -->
+    <section class="hero">
+        <div class="hero-label">Intelligence artificielle pour le suivi des tâches et l'aide à la décision</div>
+        <h1>Un assistant formé sur votre entreprise</h1>
+        <p class="hero-sub">
+            Vous traitez une multitude de dossiers en parallèle,
+            avec des exigences dans différents domaines.
+            Ton Pilote apprend votre entreprise et vous accompagne
+            au quotidien.
+        </p>
+        <a href="#contact" class="hero-cta">Demander une démo</a>
+    </section>
+
+    <!-- DIVIDER -->
+    <div class="divider"></div>
+
+    <!-- PROBLEM (split layout) -->
+    <section class="problem-section">
+        <h2>Ne vous contentez pas d'une IA conversationnelle</h2>
+        <div class="problem-right">
+            <p>
+                À chaque reprise de dossiers, il faut vous replonger dans les moindres détails.
+                <strong>Ton Pilote vous permet de ne rien rater et de suivre au plus près l'évolution des dossiers sensibles.</strong>
+            </p>
+            <p>
+                Ce que les grands groupes se réservent, vous pouvez y avoir accès.
+                <strong>Un levier puissant, configuré sur mesure pour votre activité.</strong>
+            </p>
+        </div>
+    </section>
+
+    <!-- DIVIDER -->
+    <div class="divider"></div>
+
+    <!-- FEATURES -->
+    <section class="features-section">
+        <div class="features-inner">
+            <div class="section-label">01 | Ce que Ton Pilote fait pour vous</div>
+            <h2>Reprise de dossiers, suivi des tâches,<br>accès à vos données clés</h2>
+
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-number">01</div>
+                    <h3>Suivi de dossiers</h3>
+                    <p>
+                        Vous passez d'un appel d'offres de marché public à un litige fournisseur.
+                        Reprenez exactement là où vous en étiez, sur n'importe quel dossier.
+                        Décisions prises, tâches en cours, le tout accessible avec un minimum de friction.
+                    </p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-number">02</div>
+                    <h3>Connaissance d'entreprise</h3>
+                    <p>
+                        Vos clients, vos process, votre historique, croisés
+                        et accessibles. Posez une question,
+                        obtenez une réponse sourcée pour éclairer vos décisions.
+                    </p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-number">03</div>
+                    <h3>Pilotage financier</h3>
+                    <p>
+                        Une vue en temps réel de la santé de votre entreprise.
+                        Chiffre d'affaires, marges, trésorerie, charges.
+                        Sans ressaisie, sans tableur.
+                    </p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-number">04</div>
+                    <h3>Veille sur mesure</h3>
+                    <p>
+                        Veille légale, technologique, ou compétitive
+                        Configurée pour les domaines clés qui vous concernent.
+                        Résumé chaque semaine.
+                    </p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-number">05</div>
+                    <h3>Zéro saisie</h3>
+                    <p>
+                        Déposez vos documents : factures, devis, mails,
+                        notes vocales. Ton Pilote lit, classe,
+                        et rend tout accessible.
+                    </p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-number">06</div>
+                    <h3>Devis assistés</h3>
+                    <p>
+                        Ton Pilote connaît vos tarifs, vos fournisseurs, vos prestations.
+                        Dictez vos notes vocales, il génère le devis. Vous le validez.
+                    </p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-number">07</div>
+                    <h3>Connecté à vos outils</h3>
+                    <p>
+                        Vos emails, votre agenda. Ton Pilote les lit, les comprend,
+                        et les intègre automatiquement à vos dossiers
+                        pour suivre au plus près leurs évolutions.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- USE CASES -->
+    <section class="section">
+        <div class="section-label">02 | Cas concrets</div>
+        <h2>Déjà testé sur le terrain</h2>
+    </section>
+
+    <section class="problem-section">
+        <h2>Gestion de copropriété</h2>
+        <div class="problem-right">
+            <p>
+                En croisant un devis de 2025
+                avec un document juridique de 2006, Ton Pilote a détecté
+                un risque réglementaire que ni le syndic ni l'entreprise
+                n'avaient anticipé.
+            </p>
+            <p>
+                <strong>Un enduit synthétique dans les lignes du devis,
+                incompatible avec les obligations Malraux du bâtiment.
+                Sans cette alerte, les travaux auraient dû être refaits.</strong>
+            </p>
+        </div>
+    </section>
+
+    <section class="problem-section">
+        <h2>Chambre d'hôtes</h2>
+        <div class="problem-right">
+            <p>
+                Traitement des reçus, calcul des commissions OTA, revenus directs, emprunts bancaires.
+                Toutes les sources financières consolidées dans un seul tableau de bord.
+                P&L mensuel, marges, trésorerie prévisionnelle, générés automatiquement.
+            </p>
+            <p>
+                <strong>Un pilotage financier en temps réel, pour un calcul des revenus dynamique qui vous permet de développer votre activité.</strong>
+            </p>
+        </div>
+    </section>
+
+    <section class="problem-section">
+        <h2>Litige comptable</h2>
+        <div class="problem-right">
+            <p>
+                Plus de 100 échanges, des dizaines de pièces jointes mises à jour,
+                sur plus d'un an. Ton Pilote a traité l'ensemble du dossier,
+                croisé les conversations et les documents pour reconstituer
+                la chronologie complète du litige.
+            </p>
+            <p>
+                <strong>Un dossier qu'aucun humain ne voulait reprendre,
+                synthétisé et actionnable.</strong>
+            </p>
+        </div>
+    </section>
+
+    <!-- DIVIDER -->
+    <div class="divider"></div>
+
+    <!-- ACCOMPAGNEMENT -->
+    <section class="problem-section">
+        <h2>Un accompagnement personnalisé</h2>
+        <div class="problem-right">
+            <p>
+                La connaissance de votre entreprise est possible grâce
+                à l'accompagnement personnalisé de l'équipe Ton Pilote
+                dans la configuration du service.
+                <strong>Chaque installation est unique.</strong>
+            </p>
+        </div>
+    </section>
+
+    <!-- DIVIDER -->
+    <div class="divider"></div>
+
+    <!-- TRUST -->
+    <section class="trust-section">
+        <div class="trust-inner">
+            <div class="trust-item">
+                <strong>Vos données vous appartiennent</strong>
+                <span>Clouds souverains, hébergés en France</span>
+            </div>
+            <div class="trust-item">
+                <strong>Intelligence française</strong>
+                <span>Construit sur Mistral AI</span>
+            </div>
+            <div class="trust-item">
+                <strong>Accessible partout</strong>
+                <span>Téléphone, tablette, ordinateur</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- LOCAL AI VISION -->
+    <section class="problem-section">
+        <h2>Vers une IA qui vous appartient</h2>
+        <div class="problem-right">
+            <p>
+                Aujourd'hui, l'intelligence de Ton Pilote fonctionne via des serveurs sécurisés en France.
+                Demain, les modèles d'IA pourront tourner directement sur votre propre système.
+            </p>
+            <p>
+                <strong>Nous serons les premiers à déployer cette solution pour vous.</strong>
+                Vos données, votre intelligence, chez vous.
+            </p>
+        </div>
+    </section>
+
+    <!-- DIVIDER -->
+    <div class="divider"></div>
+
+    <!-- CONTACT -->
+    <section class="contact-section" id="contact">
+        <h2>Parlons de votre entreprise</h2>
+        <div class="contact-info">
+            <p>Thomas Murphy</p>
+            <p>Fondateur, Dijon, Bourgogne</p>
+            <p style="margin-top: 1rem;">
+                <a href="mailto:hello@thomasmurphy.fr">hello@thomasmurphy.fr</a>
+            </p>
+            <p>
+                <a href="tel:+33643337314">+33 6 43 33 73 14</a>
+            </p>
+        </div>
+        <div class="conference-badge">
+            Forum IA 2026 | ESEO Dijon | 7 avril 2026
+        </div>
+    </section>
+
+    <footer>
+        &copy; 2026 Ton Pilote. Tous droits réservés.
+    </footer>
+
+</body>
+</html>
