@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ton Pilote | L'assistant qui connaît votre entreprise</title>
+    <title>TonPilote | L'assistant qui connaît votre entreprise</title>
     <meta name="description" content="Un assistant IA forme sur votre entreprise. Vos dossiers, vos finances, vos process. Il n'oublie jamais rien.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
@@ -202,6 +202,23 @@
             margin-top: 3rem;
         }
 
+        .features-secondary {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 2rem;
+            margin-top: 4rem;
+            padding-top: 3rem;
+            border-top: 1px solid #eee;
+        }
+
+        .features-secondary .feature-card h3 {
+            font-size: 1.05rem;
+        }
+
+        .features-secondary .feature-card p {
+            font-size: 0.85rem;
+        }
+
         .feature-card {
             padding: 0;
         }
@@ -323,6 +340,10 @@
                 grid-template-columns: 1fr;
                 gap: 2.5rem;
             }
+            .features-secondary {
+                grid-template-columns: 1fr 1fr;
+                gap: 1.5rem;
+            }
             .features-section { padding: 4rem 1.5rem; }
             .section { padding: 4rem 1.5rem; }
             .trust-inner {
@@ -338,22 +359,21 @@
     <!-- NAV -->
     <nav>
         <div class="nav-inner">
-            <a href="/" class="nav-logo">Ton Pilote</a>
+            <a href="/" class="nav-logo">TonPilote</a>
             <a href="#contact" class="nav-cta">Nous contacter</a>
         </div>
     </nav>
 
     <!-- HERO -->
     <section class="hero">
-        <div class="hero-label">Intelligence artificielle pour le suivi des tâches et l'aide à la décision</div>
-        <h1>Un assistant formé sur votre entreprise</h1>
+        <div class="hero-label">Pour le suivi des tâches et l'aide à la décision</div>
+        <h1>Un outil connecté au contexte de votre entreprise</h1>
         <p class="hero-sub">
-            Vous traitez une multitude de dossiers en parallèle,
-            avec des exigences dans différents domaines.
-            Ton Pilote apprend votre entreprise et vous accompagne
-            au quotidien.
+            Vous traitez des dossiers en parallèle, avec des exigences dans différents domaines.
+            TonPilote comprend votre activité dans ses moindres détails et track les changements
+            en temps réel pour accompagner vos décisions.
         </p>
-        <a href="#contact" class="hero-cta">Demander une démo</a>
+        <a href="#contact" class="hero-cta">Rejoindre la liste d'attente</a>
     </section>
 
     <!-- DIVIDER -->
@@ -364,12 +384,12 @@
         <h2>Ne vous contentez pas d'une IA conversationnelle</h2>
         <div class="problem-right">
             <p>
-                À chaque reprise de dossiers, il faut vous replonger dans les moindres détails.
-                <strong>Ton Pilote vous permet de ne rien rater et de suivre au plus près l'évolution des dossiers sensibles.</strong>
+                À chaque réouverture de dossier, il faut tout se remettre en tête.
+                <strong>TonPilote vous permet de ne rien rater et de suivre au plus près l'évolution des dossiers sensibles.</strong>
             </p>
             <p>
-                Ce que les grands groupes se réservent, vous pouvez y avoir accès.
-                <strong>Un levier puissant, configuré sur mesure pour votre activité.</strong>
+                Un levier que les grands groupes sont en train de mettre en place,
+                <strong>configuré sur mesure pour votre activité.</strong>
             </p>
         </div>
     </section>
@@ -380,7 +400,7 @@
     <!-- FEATURES -->
     <section class="features-section">
         <div class="features-inner">
-            <div class="section-label">01 | Ce que Ton Pilote fait pour vous</div>
+            <div class="section-label">01 | Ce que TonPilote fait pour vous</div>
             <h2>Reprise de dossiers, suivi des tâches,<br>accès à vos données clés</h2>
 
             <div class="features-grid">
@@ -396,16 +416,6 @@
 
                 <div class="feature-card">
                     <div class="feature-number">02</div>
-                    <h3>Connaissance d'entreprise</h3>
-                    <p>
-                        Vos clients, vos process, votre historique, croisés
-                        et accessibles. Posez une question,
-                        obtenez une réponse sourcée pour éclairer vos décisions.
-                    </p>
-                </div>
-
-                <div class="feature-card">
-                    <div class="feature-number">03</div>
                     <h3>Pilotage financier</h3>
                     <p>
                         Une vue en temps réel de la santé de votre entreprise.
@@ -415,41 +425,47 @@
                 </div>
 
                 <div class="feature-card">
-                    <div class="feature-number">04</div>
-                    <h3>Veille sur mesure</h3>
+                    <div class="feature-number">03</div>
+                    <h3>Devis assistés</h3>
                     <p>
-                        Veille légale, technologique, ou compétitive
-                        Configurée pour les domaines clés qui vous concernent.
-                        Résumé chaque semaine.
+                        TonPilote connaît vos tarifs, vos fournisseurs, vos prestations.
+                        Dictez vos notes vocales, il génère le devis. Vous le validez.
+                    </p>
+                </div>
+            </div>
+
+            <div class="features-secondary">
+                <div class="feature-card">
+                    <h3>Connaissance d'entreprise</h3>
+                    <p>
+                        Vos clients, vos process, votre historique, croisés
+                        et accessibles. Posez une question,
+                        obtenez une réponse sourcée.
                     </p>
                 </div>
 
                 <div class="feature-card">
-                    <div class="feature-number">05</div>
                     <h3>Zéro saisie</h3>
                     <p>
                         Déposez vos documents : factures, devis, mails,
-                        notes vocales. Ton Pilote lit, classe,
+                        notes vocales. TonPilote lit, classe,
                         et rend tout accessible.
                     </p>
                 </div>
 
                 <div class="feature-card">
-                    <div class="feature-number">06</div>
-                    <h3>Devis assistés</h3>
+                    <h3>Veille sur mesure</h3>
                     <p>
-                        Ton Pilote connaît vos tarifs, vos fournisseurs, vos prestations.
-                        Dictez vos notes vocales, il génère le devis. Vous le validez.
+                        Veille légale, technologique, ou compétitive.
+                        Configurée pour vos domaines clés.
                     </p>
                 </div>
 
                 <div class="feature-card">
-                    <div class="feature-number">07</div>
                     <h3>Connecté à vos outils</h3>
                     <p>
-                        Vos emails, votre agenda. Ton Pilote les lit, les comprend,
-                        et les intègre automatiquement à vos dossiers
-                        pour suivre au plus près leurs évolutions.
+                        Emails, agenda. TonPilote les intègre
+                        automatiquement à vos dossiers.
                     </p>
                 </div>
             </div>
@@ -461,8 +477,25 @@
         <div class="section-label">02 | Cas concrets</div>
         <h2>Déjà testé sur le terrain</h2>
         <p class="section-text" style="font-style: italic; margin-top: 1rem;">
-            « Mes données financières sont éparpillées entre tableurs, PDFs, photos de reçus et plateformes. Je n'ai aucune vue d'ensemble. »
+            « Entre les tableurs, les PDFs, les reçus et les plateformes, les données existent mais elles ne se parlent pas. »
         </p>
+    </section>
+
+    <section class="problem-section">
+        <h2>Litige comptable</h2>
+        <div class="problem-right">
+            <p>
+                Plus de 100 échanges, des dizaines de pièces jointes mises à jour,
+                sur plus d'un an. TonPilote a traité l'ensemble du dossier,
+                croisé les conversations et les documents pour reconstituer
+                la chronologie complète.
+            </p>
+            <p>
+                <strong>Le responsable du dossier était absent.
+                En quelques minutes, TonPilote a permis de reprendre le fil :
+                chronologie complète et prochaine action à mener.</strong>
+            </p>
+        </div>
     </section>
 
     <section class="problem-section">
@@ -470,7 +503,7 @@
         <div class="problem-right">
             <p>
                 En croisant un devis de 2025
-                avec un document juridique de 2006, Ton Pilote a détecté
+                avec un document juridique de 2006, TonPilote a détecté
                 un risque réglementaire que ni le syndic ni l'entreprise
                 n'avaient anticipé.
             </p>
@@ -496,22 +529,6 @@
         </div>
     </section>
 
-    <section class="problem-section">
-        <h2>Litige comptable</h2>
-        <div class="problem-right">
-            <p>
-                Plus de 100 échanges, des dizaines de pièces jointes mises à jour,
-                sur plus d'un an. Ton Pilote a traité l'ensemble du dossier,
-                croisé les conversations et les documents pour reconstituer
-                la chronologie complète du litige.
-            </p>
-            <p>
-                <strong>Un dossier qu'aucun humain ne voulait reprendre,
-                synthétisé et actionnable.</strong>
-            </p>
-        </div>
-    </section>
-
     <!-- DIVIDER -->
     <div class="divider"></div>
 
@@ -521,7 +538,7 @@
         <div class="problem-right">
             <p>
                 La connaissance de votre entreprise est possible grâce
-                à l'accompagnement personnalisé de l'équipe Ton Pilote
+                à l'accompagnement personnalisé de l'équipe TonPilote
                 dans la configuration du service.
                 <strong>Chaque installation est unique.</strong>
             </p>
@@ -554,7 +571,7 @@
         <h2>Vers une IA qui vous appartient</h2>
         <div class="problem-right">
             <p>
-                Aujourd'hui, l'intelligence de Ton Pilote fonctionne via des serveurs sécurisés en France.
+                Aujourd'hui, l'intelligence de TonPilote fonctionne via des serveurs sécurisés en France.
                 Demain, les modèles d'IA pourront tourner directement sur votre propre système.
             </p>
             <p>
@@ -569,7 +586,10 @@
 
     <!-- CONTACT -->
     <section class="contact-section" id="contact">
-        <h2>Parlons de votre entreprise</h2>
+        <h2>Rejoindre la liste d'attente</h2>
+        <p style="font-size: 1rem; color: #555; margin-bottom: 2rem;">
+            Accès sur liste d'attente. Chaque installation commence par un audit personnalisé de votre activité.
+        </p>
         <div class="contact-info">
             <p>Thomas Murphy</p>
             <p>Fondateur, basé en Bourgogne</p>
@@ -586,7 +606,7 @@
     </section>
 
     <footer>
-        &copy; 2026 Ton Pilote. Tous droits réservés.
+        &copy; 2026 TonPilote. Tous droits réservés.
     </footer>
 
 </body>
