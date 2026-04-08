@@ -18,4 +18,4 @@ Traitement des reçus, calcul des commissions OTA, revenus directs, emprunts ban
 ## Cohérence tarifaire
 TonPilote apprend de chaque dossier. Au bout de quelques itérations, il détecte ce qui a changé — et vous alerte avant que vous ne facturiez.
 
-**Les prix de votre fournisseur ont augmenté mécaniquement de 0,45 centimes. Voulez-vous mettre vos tarifs à jour ?**
+**Les prix de votre prestataire ont augmenté. Voulez-vous mettre vos tarifs à jour ?**
