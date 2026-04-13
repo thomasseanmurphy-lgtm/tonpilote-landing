@@ -250,8 +250,12 @@
         }
 
         .section {
-            padding: 4.5rem 0;
+            padding: 5.1rem 0;
             border-top: 1px solid var(--rule);
+        }
+
+        .section-no-divider {
+            border-top: none;
         }
 
         .section-header {
@@ -259,7 +263,7 @@
             grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.4fr);
             gap: 2rem;
             align-items: start;
-            margin-bottom: 2.6rem;
+            margin-bottom: 3rem;
         }
 
         .section-header h2 {
@@ -387,13 +391,14 @@
         .trust-band {
             display: grid;
             grid-template-columns: repeat(3, minmax(0, 1fr));
-            gap: 1.2rem;
-            padding: 1.4rem 0 0;
+            gap: 1.4rem;
+            padding: 2.4rem 0 0;
+            margin-top: 2.2rem;
+            border-top: 1px solid var(--rule);
         }
 
         .trust-item {
-            padding-top: 1.2rem;
-            border-top: 1px solid var(--rule-strong);
+            padding-top: 0.2rem;
         }
 
         .trust-item strong {
@@ -545,7 +550,7 @@
             <a href="/" class="brand">TonPilote</a>
             <div class="nav-links">
                 <a href="#preuves">Preuves</a>
-                <a href="#usages">Usages</a>
+                <a href="#usages">Impact</a>
                 <a href="#contact" class="nav-cta">Demander un audit</a>
             </div>
         </nav>
@@ -558,7 +563,8 @@
                         Faire travailler l'IA sur le contexte réel de votre entreprise.
                     </p>
                     <p class="hero-support">
-                        Chaque déploiement TonPilote commence par un audit de faisabilité.
+                        Pour reprendre plus vite des dossiers complexes, faire remonter les points de vigilance
+                        et éviter les ruptures de contexte.
                     </p>
                     <div class="hero-actions">
                         <a href="#contact" class="button button-primary">Demander un audit</a>
@@ -575,23 +581,54 @@
                     <h2>Pour les dirigeants qui pilotent des dossiers complexes en parallèle, avec des temps de résolution variables.</h2>
                 </div>
 
-                    <div class="manifesto-grid">
-                        <p>
-                            Quand une réponse tombe des semaines plus tard, il faut retrouver en quelques minutes
-                            l'historique du dossier, les décisions prises et la prochaine action.
-                        </p>
-                        <p>
-                            TonPilote remet le dossier en mémoire : pièces, points de vigilance, arbitrages envisagés et liste de tâches.
-                        </p>
+                <div class="manifesto-grid">
+                    <p>
+                        Quand une réponse tombe des semaines plus tard, il faut retrouver en quelques minutes
+                        l'historique du dossier, les décisions prises et la prochaine action.
+                    </p>
+                    <p>
+                        TonPilote remet le dossier en mémoire : pièces, points de vigilance, arbitrages envisagés et liste de tâches.
+                    </p>
+                </div>
+            </section>
+
+            <section class="section" id="usages">
+                <div class="section-header">
+                    <div>
+                        <p class="section-label">02 | Ce que cela change</p>
                     </div>
-                </section>
+                    <h2>Trois effets concrets quand l'IA travaille sur le bon contexte.</h2>
+                </div>
+
+                <div class="capability-grid">
+                    <article class="capability-item">
+                        <h3>Reprendre un dossier sans repartir de zéro</h3>
+                        <p>
+                            Historique, pièces utiles, décisions prises et suite à donner reviennent immédiatement.
+                        </p>
+                    </article>
+                    <article class="capability-item">
+                        <h3>Faire remonter un risque avant validation</h3>
+                        <p>
+                            Les contradictions importantes apparaissent avant qu'elles ne coûtent du temps, de l'argent ou une erreur évitable.
+                        </p>
+                    </article>
+                    <article class="capability-item">
+                        <h3>Retrouver la prochaine action</h3>
+                        <p>
+                            Le dossier revient avec les points à vérifier, les arbitrages en attente et une liste de tâches.
+                        </p>
+                    </article>
+                </div>
+
+            </section>
 
             <section class="section" id="preuves">
                 <div class="section-header">
                     <div>
-                        <p class="section-label">02 | Cas concrets</p>
+                        <p class="section-label">03 | Cas concrets</p>
                     </div>
-                    <h2>Quand le bon contexte change la suite du dossier.</h2>
+                    <h2>Des cas où le bon contexte change réellement l'issue du dossier.</h2>
                 </div>
 
                 <div class="proof-list">
@@ -624,25 +661,13 @@
                         </div>
                     </article>
 
-                    <article class="proof-row">
-                        <div class="proof-label">Cas 03</div>
-                        <h3>Recherche multi-sources</h3>
-                        <div>
-                            <p>
-                                Retrouver une information à travers PDF, scans, historiques et fichiers aux noms opaques, sans repartir de zéro.
-                            </p>
-                            <p class="proof-outcome">
-                                Le système rattache les pièces au bon dossier et remet l'information utile dans son contexte.
-                            </p>
-                        </div>
-                    </article>
                 </div>
             </section>
 
-            <section class="section">
+            <section class="section section-no-divider">
                 <div class="section-header">
                     <div>
-                        <p class="section-label">03 | Cartographie</p>
+                        <p class="section-label">04 | Cartographie</p>
                     </div>
                     <h2>Faire dialoguer les dossiers complexes pour faire remonter les signaux faibles.</h2>
                 </div>
@@ -676,51 +701,6 @@
                 </div>
             </section>
 
-            <section class="section" id="usages">
-                <div class="section-header">
-                    <div>
-                        <p class="section-label">04 | Ce que cela rend possible</p>
-                    </div>
-                    <h2>Le même socle de contexte peut ensuite servir trois usages concrets.</h2>
-                </div>
-
-                <div class="capability-grid">
-                    <article class="capability-item">
-                        <h3>Dossiers et tâches suggérées</h3>
-                        <p>
-                            Retrouver l'historique, les décisions, les points à vérifier et une liste de tâches pour repartir sans perdre le fil.
-                        </p>
-                    </article>
-                    <article class="capability-item">
-                        <h3>Recherche multi-sources</h3>
-                        <p>
-                            Retrouver une information à travers PDF, scans, historiques et fichiers aux noms opaques, sans repartir de zéro.
-                        </p>
-                    </article>
-                    <article class="capability-item">
-                        <h3>Pilotage financier</h3>
-                        <p>
-                            Transformer pièces et flux en chiffres utiles : marges, trésorerie, écarts et dérive de coûts.
-                        </p>
-                    </article>
-                </div>
-
-                <div class="trust-band">
-                    <div class="trust-item">
-                        <strong>Vos données vous appartiennent</strong>
-                        <span>Hébergement en France et contexte structuré.</span>
-                    </div>
-                    <div class="trust-item">
-                        <strong>Réponses auditables</strong>
-                        <span>Le système doit pouvoir montrer ses sources.</span>
-                    </div>
-                    <div class="trust-item">
-                        <strong>Installation accompagnée</strong>
-                        <span>Chaque déploiement commence par un audit.</span>
-                    </div>
-                </div>
-            </section>
-
             <section class="section" id="contact">
                 <div class="contact-wrap">
                     <div>
@@ -746,6 +726,21 @@
                             <a href="tel:+33643337314" class="button button-secondary">Appeler</a>
                         </div>
                     </aside>
+                </div>
+
+                <div class="trust-band">
+                    <div class="trust-item">
+                        <strong>Vos données vous appartiennent</strong>
+                        <span>Hébergement en France et contexte structuré.</span>
+                    </div>
+                    <div class="trust-item">
+                        <strong>Réponses auditables</strong>
+                        <span>Le système doit pouvoir montrer ses sources.</span>
+                    </div>
+                    <div class="trust-item">
+                        <strong>Installation accompagnée</strong>
+                        <span>Chaque déploiement commence par un audit.</span>
+                    </div>
                 </div>
             </section>
         </main>
