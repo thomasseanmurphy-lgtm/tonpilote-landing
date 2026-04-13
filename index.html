@@ -7,6 +7,9 @@
     <meta name="description" content="TonPilote commence par un audit de faisabilité, puis structure dossiers, documents et règles métier pour déployer des usages IA concrets : contexte dossier, tâches suggérées, devis, finances et alertes.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script>
+        document.documentElement.classList.add('js');
+    </script>
     <style>
         :root {
             --bg: #f4ede3;
@@ -23,6 +26,8 @@
             --success: #31553b;
             --max: 1180px;
             --shadow: 0 24px 60px rgba(36, 27, 20, 0.08);
+            --ease-out-quart: cubic-bezier(0.25, 1, 0.5, 1);
+            --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
         }
 
         * {
@@ -126,6 +131,72 @@
 
         .button-secondary:hover {
             background: rgba(255, 255, 255, 0.35);
+        }
+
+        .js .hero-copy > * {
+            opacity: 0;
+            transform: translate3d(0, 26px, 0);
+            transition:
+                opacity 720ms var(--ease-out-expo),
+                transform 720ms var(--ease-out-expo);
+        }
+
+        .js.is-ready .hero-copy > * {
+            opacity: 1;
+            transform: translate3d(0, 0, 0);
+        }
+
+        .js .hero-copy > h1 {
+            transition-delay: 70ms;
+        }
+
+        .js .hero-lead {
+            transition-delay: 180ms;
+        }
+
+        .js .hero-support {
+            transition-delay: 280ms;
+        }
+
+        .js .hero-actions {
+            transition-delay: 390ms;
+        }
+
+        .js .reveal {
+            opacity: 0;
+            transform: translate3d(0, 34px, 0);
+            transition:
+                opacity 760ms var(--ease-out-quart),
+                transform 760ms var(--ease-out-quart);
+            transition-delay: var(--delay, 0ms);
+        }
+
+        .js .reveal-card {
+            transform: translate3d(0, 34px, 0) scale(0.985);
+        }
+
+        .js .reveal.is-visible {
+            opacity: 1;
+            transform: translate3d(0, 0, 0) scale(1);
+        }
+
+        .capability-item,
+        .graph-card,
+        .contact-card,
+        .button,
+        .nav-cta {
+            transition:
+                transform 240ms var(--ease-out-quart),
+                box-shadow 240ms var(--ease-out-quart),
+                background 200ms ease,
+                color 200ms ease,
+                border-color 200ms ease;
+        }
+
+        .capability-item:hover,
+        .graph-card:hover {
+            transform: translate3d(0, -3px, 0);
+            box-shadow: 0 28px 46px rgba(36, 27, 20, 0.08);
         }
 
         .hero {
@@ -258,6 +329,10 @@
             border-top: none;
         }
 
+        .section-tight-top {
+            padding-top: 3.2rem;
+        }
+
         .section-header {
             display: grid;
             grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.4fr);
@@ -359,12 +434,40 @@
             display: grid;
             grid-template-columns: minmax(0, 1.2fr) minmax(0, 0.95fr);
             gap: 1.35rem;
+            align-items: start;
         }
 
         .graph-card {
             padding: 1.6rem;
             background: rgba(255, 255, 255, 0.32);
             border: 1px solid rgba(23, 20, 16, 0.08);
+        }
+
+        .graph-media {
+            padding: 1.05rem;
+            background: rgba(255, 255, 255, 0.4);
+        }
+
+        .graph-media-frame {
+            position: relative;
+            overflow: hidden;
+            aspect-ratio: 960 / 516;
+            background:
+                radial-gradient(circle at 18% 18%, rgba(126, 92, 72, 0.14), transparent 34%),
+                rgba(246, 241, 232, 0.9);
+            border: 1px solid rgba(23, 20, 16, 0.08);
+        }
+
+        .graph-video {
+            display: block;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            filter: saturate(0.88) contrast(1.02);
+        }
+
+        .graph-caption {
+            margin-top: 1rem;
         }
 
         .graph-card p {
@@ -386,6 +489,7 @@
 
         .graph-example {
             background: var(--bg-soft);
+            align-self: start;
         }
 
         .trust-band {
@@ -417,6 +521,7 @@
             grid-template-columns: minmax(0, 1.25fr) minmax(280px, 0.78fr);
             gap: 2rem;
             align-items: start;
+            margin-top: 0.8rem;
         }
 
         .contact-copy {
@@ -542,6 +647,24 @@
                 width: 100%;
             }
         }
+
+        @media (prefers-reduced-motion: reduce) {
+            html {
+                scroll-behavior: auto;
+            }
+
+            .js .hero-copy > *,
+            .js .reveal,
+            .capability-item,
+            .graph-card,
+            .contact-card,
+            .button,
+            .nav-cta {
+                opacity: 1 !important;
+                transform: none !important;
+                transition: none !important;
+            }
+        }
     </style>
 </head>
 <body>
@@ -574,7 +697,7 @@
             </section>
 
             <section class="section">
-                <div class="section-header">
+                <div class="section-header reveal">
                     <div>
                         <p class="section-label">01 | Pour qui</p>
                     </div>
@@ -582,18 +705,18 @@
                 </div>
 
                 <div class="manifesto-grid">
-                    <p>
+                    <p class="reveal" style="--delay: 40ms;">
                         Quand une réponse tombe des semaines plus tard, il faut retrouver en quelques minutes
                         l'historique du dossier, les décisions prises et la prochaine action.
                     </p>
-                    <p>
+                    <p class="reveal" style="--delay: 140ms;">
                         TonPilote remet le dossier en mémoire : pièces, points de vigilance, arbitrages envisagés et liste de tâches.
                     </p>
                 </div>
             </section>
 
             <section class="section" id="usages">
-                <div class="section-header">
+                <div class="section-header reveal">
                     <div>
                         <p class="section-label">02 | Ce que cela change</p>
                     </div>
@@ -601,19 +724,19 @@
                 </div>
 
                 <div class="capability-grid">
-                    <article class="capability-item">
+                    <article class="capability-item reveal reveal-card" style="--delay: 30ms;">
                         <h3>Reprendre un dossier sans repartir de zéro</h3>
                         <p>
                             Historique, pièces utiles, décisions prises et suite à donner reviennent immédiatement.
                         </p>
                     </article>
-                    <article class="capability-item">
+                    <article class="capability-item reveal reveal-card" style="--delay: 120ms;">
                         <h3>Faire remonter un risque avant validation</h3>
                         <p>
                             Les contradictions importantes apparaissent avant qu'elles ne coûtent du temps, de l'argent ou une erreur évitable.
                         </p>
                     </article>
-                    <article class="capability-item">
+                    <article class="capability-item reveal reveal-card" style="--delay: 210ms;">
                         <h3>Retrouver la prochaine action</h3>
                         <p>
                             Le dossier revient avec les points à vérifier, les arbitrages en attente et une liste de tâches.
@@ -624,7 +747,7 @@
             </section>
 
             <section class="section" id="preuves">
-                <div class="section-header">
+                <div class="section-header reveal">
                     <div>
                         <p class="section-label">03 | Cas concrets</p>
                     </div>
@@ -632,7 +755,7 @@
                 </div>
 
                 <div class="proof-list">
-                    <article class="proof-row">
+                    <article class="proof-row reveal" style="--delay: 40ms;">
                         <div class="proof-label">Cas 01</div>
                         <h3>Conformité réglementaire</h3>
                         <div>
@@ -648,7 +771,7 @@
                         </div>
                     </article>
 
-                    <article class="proof-row">
+                    <article class="proof-row reveal" style="--delay: 160ms;">
                         <div class="proof-label">Cas 02</div>
                         <h3>Continuité opérationnelle</h3>
                         <div>
@@ -664,8 +787,8 @@
                 </div>
             </section>
 
-            <section class="section section-no-divider">
-                <div class="section-header">
+            <section class="section section-no-divider section-tight-top">
+                <div class="section-header reveal">
                     <div>
                         <p class="section-label">04 | Cartographie</p>
                     </div>
@@ -673,21 +796,25 @@
                 </div>
 
                 <div class="graph-focus">
-                    <div class="graph-card">
-                        <p class="graph-lead">
-                            Une cartographie vivante de l'entreprise.
-                        </p>
-                        <p>
-                            Relier dossiers actifs, historiques et documents dispersés pour révéler ce qui compte
-                            et garder un temps d'avance.
-                        </p>
-                        <p>
-                            Le graphe relie dossiers en cours, dossiers dormants, décisions et contraintes
-                            pour faire ressortir des signaux faibles invisibles ailleurs.
-                        </p>
+                    <div class="graph-card graph-media reveal reveal-card" style="--delay: 40ms;">
+                        <div class="graph-media-frame">
+                            <video class="graph-video" autoplay muted loop playsinline preload="metadata" aria-label="Capture du graphe TonPilote">
+                                <source src="assets/cartographie-loop.webm" type="video/webm">
+                                <source src="assets/cartographie-loop.mp4" type="video/mp4">
+                            </video>
+                        </div>
+                        <div class="graph-caption">
+                            <p class="graph-lead">
+                                Une cartographie vivante de l'entreprise.
+                            </p>
+                            <p>
+                                Le graphe relie dossiers en cours, dossiers dormants, décisions et contraintes
+                                pour faire ressortir des signaux faibles invisibles ailleurs.
+                            </p>
+                        </div>
                     </div>
 
-                    <div class="graph-card graph-example">
+                    <div class="graph-card graph-example reveal reveal-card" style="--delay: 160ms;">
                         <div class="panel-kicker">Exemple concret</div>
                         <p>
                             Un devis récent semblait cohérent jusqu'à ce qu'une ligne soit contredite
@@ -702,17 +829,22 @@
             </section>
 
             <section class="section" id="contact">
-                <div class="contact-wrap">
+                <div class="section-header reveal">
                     <div>
                         <p class="section-label">05 | Audit</p>
-                        <h2>Chaque déploiement commence par un audit de faisabilité.</h2>
+                    </div>
+                    <h2>Chaque déploiement commence par un audit de faisabilité.</h2>
+                </div>
+
+                <div class="contact-wrap">
+                    <div class="reveal" style="--delay: 40ms;">
                         <p class="contact-copy">
                             On vérifie la stack, les workflows, les exports et la qualité documentaire.
                             Ensuite seulement, on définit le périmètre utile à déployer.
                         </p>
                     </div>
 
-                    <aside class="contact-card">
+                    <aside class="contact-card reveal reveal-card" style="--delay: 160ms;">
                         <h3>Thomas Murphy</h3>
                         <p>Fondateur de TonPilote</p>
                         <p style="margin-top: 1rem;">
@@ -729,15 +861,15 @@
                 </div>
 
                 <div class="trust-band">
-                    <div class="trust-item">
+                    <div class="trust-item reveal" style="--delay: 30ms;">
                         <strong>Vos données vous appartiennent</strong>
                         <span>Hébergement en France et contexte structuré.</span>
                     </div>
-                    <div class="trust-item">
+                    <div class="trust-item reveal" style="--delay: 110ms;">
                         <strong>Réponses auditables</strong>
                         <span>Le système doit pouvoir montrer ses sources.</span>
                     </div>
-                    <div class="trust-item">
+                    <div class="trust-item reveal" style="--delay: 190ms;">
                         <strong>Installation accompagnée</strong>
                         <span>Chaque déploiement commence par un audit.</span>
                     </div>
@@ -749,5 +881,35 @@
             TonPilote est une méthode de déploiement : audit de faisabilité, structuration du contexte, puis interface quand elle est pertinente.
         </footer>
     </div>
+    <script>
+        (() => {
+            const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+            const root = document.documentElement;
+
+            requestAnimationFrame(() => {
+                root.classList.add('is-ready');
+            });
+
+            if (reduceMotion || !('IntersectionObserver' in window)) {
+                document.querySelectorAll('.reveal').forEach((element) => {
+                    element.classList.add('is-visible');
+                });
+                return;
+            }
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach((entry) => {
+                    entry.target.classList.toggle('is-visible', entry.isIntersecting);
+                });
+            }, {
+                threshold: 0.18,
+                rootMargin: '0px 0px -8% 0px'
+            });
+
+            document.querySelectorAll('.reveal').forEach((element) => {
+                observer.observe(element);
+            });
+        })();
+    </script>
 </body>
 </html>
