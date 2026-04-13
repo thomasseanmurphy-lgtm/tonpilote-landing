@@ -3,11 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TonPilote | Methode de deploiement IA pour PME</title>
-    <meta name="description" content="TonPilote commence par un audit de faisabilite, puis structure dossiers, documents et regles metier pour deployer des usages IA concrets: contexte dossier, taches suggerees, devis, finances et alertes.">
+    <title>TonPilote | Méthode de déploiement IA pour PME</title>
+    <meta name="description" content="TonPilote commence par un audit de faisabilité, puis structure dossiers, documents et règles métier pour déployer des usages IA concrets : contexte dossier, tâches suggérées, devis, finances et alertes.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght,SOFT@9..144,300..700,0..100&amp;family=Instrument+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <style>
         :root {
             --bg: #f4ede3;
@@ -37,7 +36,7 @@
         }
 
         body {
-            font-family: "Instrument Sans", sans-serif;
+            font-family: "Inter", -apple-system, sans-serif;
             color: var(--ink);
             background:
                 radial-gradient(circle at top left, rgba(111, 45, 36, 0.10), transparent 28%),
@@ -73,7 +72,7 @@
         }
 
         .brand {
-            font-family: "Fraunces", serif;
+            font-family: "DM Serif Display", serif;
             font-size: 1.5rem;
             font-weight: 420;
             letter-spacing: -0.03em;
@@ -131,10 +130,10 @@
 
         .hero {
             display: grid;
-            grid-template-columns: minmax(0, 1.5fr) minmax(280px, 0.78fr);
-            gap: 3.2rem;
+            grid-template-columns: minmax(0, 1fr);
+            gap: 0;
             align-items: end;
-            padding: 5.5rem 0 4.5rem;
+            padding: 5.5rem 0 3.8rem;
         }
 
         .eyebrow,
@@ -153,7 +152,7 @@
         h1,
         h2,
         h3 {
-            font-family: "Fraunces", serif;
+            font-family: "DM Serif Display", serif;
             font-weight: 380;
             letter-spacing: -0.035em;
             line-height: 1.02;
@@ -161,8 +160,8 @@
 
         h1 {
             font-size: clamp(3rem, 7.4vw, 6rem);
-            max-width: 11ch;
-            margin-bottom: 1.5rem;
+            max-width: 16ch;
+            margin-bottom: 1rem;
         }
 
         .hero-copy > p {
@@ -171,6 +170,12 @@
 
         .hero-lead {
             font-size: clamp(1.1rem, 1.8vw, 1.34rem);
+            color: var(--ink);
+            margin-bottom: 0.9rem;
+        }
+
+        .hero-support {
+            font-size: 1.04rem;
             color: var(--ink-soft);
             margin-bottom: 1.85rem;
         }
@@ -368,7 +373,7 @@
         }
 
         .graph-lead {
-            font-family: "Fraunces", serif;
+            font-family: "DM Serif Display", serif;
             font-size: 1.5rem;
             line-height: 1.16;
             letter-spacing: -0.02em;
@@ -519,7 +524,7 @@
             }
 
             h1 {
-                max-width: 12ch;
+                max-width: 16ch;
             }
 
             .hero-actions,
@@ -548,45 +553,43 @@
         <main>
             <section class="hero">
                 <div class="hero-copy">
-                    <p class="eyebrow">Deploiement d'IA sur-mesure pour PME</p>
-                    <h1>Retrouver le contexte. Garder le fil. Faire avancer les dossiers.</h1>
+                    <h1>Déploiement d'IA sur-mesure pour PME</h1>
                     <p class="hero-lead">
-                        TonPilote commence par un audit de faisabilite, puis structure dossiers, documents
-                        et regles metier pour deployer des usages fiables dans le travail reel.
+                        Faire travailler l'IA sur le contexte réel de votre entreprise.
+                    </p>
+                    <p class="hero-support">
+                        Chaque déploiement TonPilote commence par un audit de faisabilité.
                     </p>
                     <div class="hero-actions">
                         <a href="#contact" class="button button-primary">Demander un audit</a>
                         <a href="#preuves" class="button button-secondary">Voir les cas concrets</a>
                     </div>
-                    <p class="hero-note">
-                        <strong>Pour les PME qui passent d'un dossier complexe a l'autre toute la journee.</strong>
-                        Pour celles qui veulent retrouver du contexte vite, garder le fil et retrouver de la marge de manoeuvre.
-                    </p>
+                </div>
+            </section>
+
+            <section class="section">
+                <div class="section-header">
+                    <div>
+                        <p class="section-label">01 | Pour qui</p>
+                    </div>
+                    <h2>Pour les dirigeants qui pilotent des dossiers complexes en parallèle, avec des temps de résolution variables.</h2>
                 </div>
 
-                <aside class="hero-panel">
-                    <div class="panel-kicker">Ce que cela change</div>
-                    <ul class="signal-list">
-                        <li>
-                            <strong>Temps gagne</strong>
-                            <span>Historique, pieces et prochaines taches sont retrouves sans repartir de zero.</span>
-                        </li>
-                        <li>
-                            <strong>Erreurs evitees</strong>
-                            <span>Les incoherences, risques et ecarts remontent avant validation.</span>
-                        </li>
-                        <li>
-                            <strong>Deploiement utile</strong>
-                            <span>Audit d'abord, interface ensuite, seulement la ou le gain est reel.</span>
-                        </li>
-                    </ul>
-                </aside>
-            </section>
+                    <div class="manifesto-grid">
+                        <p>
+                            Quand une réponse tombe des semaines plus tard, il faut retrouver en quelques minutes
+                            l'historique du dossier, les décisions prises et la prochaine action.
+                        </p>
+                        <p>
+                            TonPilote remet le dossier en mémoire : pièces, points de vigilance, arbitrages envisagés et liste de tâches.
+                        </p>
+                    </div>
+                </section>
 
             <section class="section" id="preuves">
                 <div class="section-header">
                     <div>
-                        <p class="section-label">01 | Cas concrets</p>
+                        <p class="section-label">02 | Cas concrets</p>
                     </div>
                     <h2>Quand le bon contexte change la suite du dossier.</h2>
                 </div>
@@ -594,42 +597,42 @@
                 <div class="proof-list">
                     <article class="proof-row">
                         <div class="proof-label">Cas 01</div>
-                        <h3>Continuite operationnelle</h3>
+                        <h3>Conformité réglementaire</h3>
                         <div>
                             <p>
-                                Un dossier s'etale sur des mois et la personne qui le suivait n'est plus disponible.
+                                En croisant un devis de 2026 avec un document juridique de 2006,
+                                TonPilote détecte un risque réglementaire que ni le syndic ni l'entreprise
+                                n'avaient anticipé.
                             </p>
                             <p class="proof-outcome">
-                                TonPilote reconstitue l'historique, remet les points de vigilance au clair et propose les prochaines taches.
+                                Un enduit synthétique dans les lignes du devis, incompatible avec les obligations
+                                Malraux du bâtiment. Sans cette alerte, les travaux auraient dû être refaits.
                             </p>
                         </div>
                     </article>
 
                     <article class="proof-row">
                         <div class="proof-label">Cas 02</div>
-                        <h3>Conformite reglementaire</h3>
+                        <h3>Continuité opérationnelle</h3>
                         <div>
                             <p>
-                                En croisant un devis de 2026 avec un document juridique de 2006,
-                                TonPilote detecte un risque reglementaire que ni le syndic ni l'entreprise
-                                n'avaient anticipe.
+                                Un dossier long, une personne absente, des mois d'échanges à reprendre.
                             </p>
                             <p class="proof-outcome">
-                                Un enduit synthetique dans les lignes du devis, incompatible avec les obligations
-                                Malraux du batiment. Sans cette alerte, les travaux auraient du etre refaits.
+                                TonPilote reconstitue l'historique, remet les points de vigilance au clair et propose les prochaines tâches.
                             </p>
                         </div>
                     </article>
 
                     <article class="proof-row">
                         <div class="proof-label">Cas 03</div>
-                        <h3>Coherence tarifaire</h3>
+                        <h3>Recherche multi-sources</h3>
                         <div>
                             <p>
-                                Un fournisseur change ses prix. Le risque est de renvoyer un devis ou une facture avec le mauvais montant.
+                                Retrouver une information à travers PDF, scans, historiques et fichiers aux noms opaques, sans repartir de zéro.
                             </p>
                             <p class="proof-outcome">
-                                TonPilote repere l'ecart avant l'envoi.
+                                Le système rattache les pièces au bon dossier et remet l'information utile dans son contexte.
                             </p>
                         </div>
                     </article>
@@ -639,7 +642,7 @@
             <section class="section">
                 <div class="section-header">
                     <div>
-                        <p class="section-label">02 | Cartographie</p>
+                        <p class="section-label">03 | Cartographie</p>
                     </div>
                     <h2>Faire dialoguer les dossiers complexes pour faire remonter les signaux faibles.</h2>
                 </div>
@@ -650,11 +653,11 @@
                             Une cartographie vivante de l'entreprise.
                         </p>
                         <p>
-                            Relier dossiers actifs, historiques et documents disperses pour reveler ce qui compte
+                            Relier dossiers actifs, historiques et documents dispersés pour révéler ce qui compte
                             et garder un temps d'avance.
                         </p>
                         <p>
-                            Le graphe relie dossiers en cours, dossiers dormants, decisions et contraintes
+                            Le graphe relie dossiers en cours, dossiers dormants, décisions et contraintes
                             pour faire ressortir des signaux faibles invisibles ailleurs.
                         </p>
                     </div>
@@ -662,12 +665,12 @@
                     <div class="graph-card graph-example">
                         <div class="panel-kicker">Exemple concret</div>
                         <p>
-                            Un devis recent semblait coherent jusqu'a ce qu'une ligne soit contredite
-                            par un document reglementaire de 2006.
+                            Un devis récent semblait cohérent jusqu'à ce qu'une ligne soit contredite
+                            par un document réglementaire de 2006.
                         </p>
                         <p>
                             En faisant dialoguer le devis avec ce document dormant,
-                            TonPilote a fait remonter une incoherence avant validation.
+                            TonPilote a fait remonter une incohérence avant validation.
                         </p>
                     </div>
                 </div>
@@ -676,50 +679,44 @@
             <section class="section" id="usages">
                 <div class="section-header">
                     <div>
-                        <p class="section-label">03 | Un socle, plusieurs usages</p>
+                        <p class="section-label">04 | Ce que cela rend possible</p>
                     </div>
-                    <h2>Un meme socle de contexte pour plusieurs gains concrets.</h2>
+                    <h2>Le même socle de contexte peut ensuite servir trois usages concrets.</h2>
                 </div>
 
                 <div class="capability-grid">
                     <article class="capability-item">
-                        <h3>Dossiers et taches suggerees</h3>
+                        <h3>Dossiers et tâches suggérées</h3>
                         <p>
-                            Retrouver l'historique, les decisions, les points a verifier et une liste de taches pour repartir sans perdre le fil.
-                        </p>
-                    </article>
-                    <article class="capability-item">
-                        <h3>Pilotage financier</h3>
-                        <p>
-                            Transformer pieces et flux en chiffres utiles: marges, tresorerie, ecarts et derive de couts.
+                            Retrouver l'historique, les décisions, les points à vérifier et une liste de tâches pour repartir sans perdre le fil.
                         </p>
                     </article>
                     <article class="capability-item">
                         <h3>Recherche multi-sources</h3>
                         <p>
-                            Retrouver une information a travers PDF, scans, historiques et fichiers aux noms opaques, sans repartir de zero.
+                            Retrouver une information à travers PDF, scans, historiques et fichiers aux noms opaques, sans repartir de zéro.
                         </p>
                     </article>
                     <article class="capability-item">
-                        <h3>Veille et alertes</h3>
+                        <h3>Pilotage financier</h3>
                         <p>
-                            Faire tomber la bonne alerte dans le bon dossier quand une norme, un prix ou une echeance change.
+                            Transformer pièces et flux en chiffres utiles : marges, trésorerie, écarts et dérive de coûts.
                         </p>
                     </article>
                 </div>
 
                 <div class="trust-band">
                     <div class="trust-item">
-                        <strong>Vos donnees vous appartiennent</strong>
-                        <span>Hebergement en France et contexte structure.</span>
+                        <strong>Vos données vous appartiennent</strong>
+                        <span>Hébergement en France et contexte structuré.</span>
                     </div>
                     <div class="trust-item">
-                        <strong>Reponses auditables</strong>
-                        <span>Le systeme doit pouvoir montrer ses sources.</span>
+                        <strong>Réponses auditables</strong>
+                        <span>Le système doit pouvoir montrer ses sources.</span>
                     </div>
                     <div class="trust-item">
-                        <strong>Installation accompagnee</strong>
-                        <span>Chaque deploiement commence par un audit.</span>
+                        <strong>Installation accompagnée</strong>
+                        <span>Chaque déploiement commence par un audit.</span>
                     </div>
                 </div>
             </section>
@@ -727,11 +724,11 @@
             <section class="section" id="contact">
                 <div class="contact-wrap">
                     <div>
-                        <p class="section-label">04 | Audit</p>
-                        <h2>L'audit verifie si le gain est reel avant tout deploiement.</h2>
+                        <p class="section-label">05 | Audit</p>
+                        <h2>Chaque déploiement commence par un audit de faisabilité.</h2>
                         <p class="contact-copy">
-                            On regarde la stack, les workflows, les exports et la qualite documentaire.
-                            Ensuite seulement, on decide ce qui peut etre fiable, utile et rentable a deployer.
+                            On vérifie la stack, les workflows, les exports et la qualité documentaire.
+                            Ensuite seulement, on définit le périmètre utile à déployer.
                         </p>
                     </div>
 
@@ -754,7 +751,7 @@
         </main>
 
         <footer>
-            TonPilote est une methode de deploiement: audit de faisabilite, structuration du contexte, puis interface quand elle est pertinente.
+            TonPilote est une méthode de déploiement : audit de faisabilité, structuration du contexte, puis interface quand elle est pertinente.
         </footer>
     </div>
 </body>
