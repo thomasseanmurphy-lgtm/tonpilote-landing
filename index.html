@@ -673,6 +673,13 @@
             .nav-cta {
                 width: 100%;
             }
+
+            .js .reveal,
+            .js .reveal-card {
+                opacity: 1;
+                transform: none;
+                transition: none;
+            }
         }
 
         @media (prefers-reduced-motion: reduce) {
@@ -903,13 +910,14 @@
     <script>
         (() => {
             const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+            const mobileViewport = window.matchMedia('(max-width: 720px)').matches;
             const root = document.documentElement;
 
             requestAnimationFrame(() => {
                 root.classList.add('is-ready');
             });
 
-            if (reduceMotion || !('IntersectionObserver' in window)) {
+            if (reduceMotion || mobileViewport || !('IntersectionObserver' in window)) {
                 document.querySelectorAll('.reveal').forEach((element) => {
                     element.classList.add('is-visible');
                 });
