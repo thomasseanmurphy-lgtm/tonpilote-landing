@@ -655,9 +655,13 @@
             }
 
             .nav-links {
-                justify-content: space-between;
+                justify-content: flex-start;
                 flex-wrap: wrap;
                 gap: 0.8rem;
+            }
+
+            .site-nav .nav-cta {
+                display: none;
             }
 
             h1 {
@@ -674,11 +678,16 @@
                 width: 100%;
             }
 
-            .js .reveal,
-            .js .reveal-card {
-                opacity: 1;
-                transform: none;
-                transition: none;
+            .js .hero-copy > *,
+            .js .section-header.reveal,
+            .js .proof-row.reveal,
+            .js .capability-item.reveal,
+            .js .graph-manifesto.reveal,
+            .js .contact-wrap > .reveal,
+            .js .trust-item.reveal {
+                transform: translate3d(0, 10px, 0);
+                transition-duration: 380ms;
+                transition-timing-function: var(--ease-out-quart);
             }
         }
 
@@ -910,14 +919,13 @@
     <script>
         (() => {
             const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-            const mobileViewport = window.matchMedia('(max-width: 720px)').matches;
             const root = document.documentElement;
 
             requestAnimationFrame(() => {
                 root.classList.add('is-ready');
             });
 
-            if (reduceMotion || mobileViewport || !('IntersectionObserver' in window)) {
+            if (reduceMotion || !('IntersectionObserver' in window)) {
                 document.querySelectorAll('.reveal').forEach((element) => {
                     element.classList.add('is-visible');
                 });
