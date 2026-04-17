@@ -513,6 +513,30 @@
             max-width: 38rem;
         }
 
+        .cartographie-layout {
+            display: grid;
+            grid-template-columns: minmax(0, 1.3fr) minmax(0, 1fr);
+            gap: 2.5rem;
+            align-items: center;
+        }
+
+        .cartographie-media {
+            grid-column: 1;
+        }
+
+        .cartographie-copy {
+            grid-column: 2;
+            max-width: 38rem;
+        }
+
+        .cartographie-copy .graph-lead {
+            max-width: none;
+        }
+
+        .cartographie-copy p + p {
+            margin-top: 1rem;
+        }
+
         .trust-band {
             display: grid;
             grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -650,6 +674,16 @@
                 display: none;
             }
 
+            .cartographie-layout {
+                grid-template-columns: 1fr;
+                gap: 1.4rem;
+            }
+
+            .cartographie-media,
+            .cartographie-copy {
+                grid-column: auto;
+            }
+
         }
 
         @media (max-width: 900px) {
@@ -755,9 +789,16 @@
                     <h2>Connecter les dossiers.</h2>
                 </div>
 
-                <div class="graph-manifesto reveal" style="--delay: 40ms;">
-                    <div class="graph-manifesto-spacer" aria-hidden="true"></div>
-                    <div class="graph-manifesto-copy">
+                <div class="cartographie-layout">
+                    <div class="cartographie-media graph-card graph-media reveal reveal-card" style="--delay: 40ms;">
+                        <div class="graph-media-frame">
+                            <video class="graph-video" autoplay muted loop playsinline preload="metadata" aria-label="Capture du graphe TonPilote">
+                                <source src="assets/cartographie-loop.webm" type="video/webm">
+                                <source src="assets/cartographie-loop.mp4" type="video/mp4">
+                            </video>
+                        </div>
+                    </div>
+                    <div class="cartographie-copy reveal" style="--delay: 140ms;">
                         <p class="graph-lead">
                             Une cartographie vivante de l'entreprise pour capter les signaux faibles.
                         </p>
@@ -765,17 +806,6 @@
                             Le graphe relie dossiers en cours, dossiers dormants, décisions et contraintes
                             pour exposer des signaux faibles invisibles ailleurs.
                         </p>
-                    </div>
-                </div>
-
-                <div class="graph-focus">
-                    <div class="graph-card graph-media reveal reveal-card" style="--delay: 140ms;">
-                        <div class="graph-media-frame">
-                            <video class="graph-video" autoplay muted loop playsinline preload="metadata" aria-label="Capture du graphe TonPilote">
-                                <source src="assets/cartographie-loop.webm" type="video/webm">
-                                <source src="assets/cartographie-loop.mp4" type="video/mp4">
-                            </video>
-                        </div>
                     </div>
                 </div>
             </section>
