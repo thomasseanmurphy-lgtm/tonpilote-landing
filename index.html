@@ -366,6 +366,10 @@
             color: var(--ink);
         }
 
+        .manifesto-grid > .principle-body {
+            grid-column: 2;
+        }
+
         .capability-item {
             padding: 1.5rem 1.4rem 1.45rem;
             background: rgba(255, 255, 255, 0.28);
@@ -612,6 +616,10 @@
                 grid-template-columns: 1fr;
             }
 
+            .manifesto-grid > .principle-body {
+                grid-column: 1;
+            }
+
             .hero {
                 padding: 4.2rem 0 3.5rem;
                 gap: 2rem;
@@ -742,26 +750,7 @@
             <section class="section">
                 <div class="section-header reveal" data-reveal-once="true">
                     <div>
-                        <p class="section-label">01 | Pour qui</p>
-                    </div>
-                    <h2>Pour les dirigeants qui pilotent des dossiers complexes en parallèle, avec des temps de résolution variables.</h2>
-                </div>
-
-                <div class="manifesto-grid">
-                    <p class="reveal" style="--delay: 40ms;">
-                        Quand une réponse tombe des semaines plus tard, il faut retrouver en quelques minutes
-                        l'historique du dossier, les décisions prises et la prochaine action.
-                    </p>
-                    <p class="reveal" style="--delay: 140ms;">
-                        TonPilote remet le dossier en mémoire : pièces, points de vigilance, arbitrages envisagés et liste de tâches.
-                    </p>
-                </div>
-            </section>
-
-            <section class="section">
-                <div class="section-header reveal" data-reveal-once="true">
-                    <div>
-                        <p class="section-label">02 | Cartographie</p>
+                        <p class="section-label">01 | Cartographie</p>
                     </div>
                     <h2>Connecter les dossiers.</h2>
                 </div>
@@ -794,6 +783,25 @@
             <section class="section">
                 <div class="section-header reveal" data-reveal-once="true">
                     <div>
+                        <p class="section-label">02 | Pour qui</p>
+                    </div>
+                    <h2>Pour les dirigeants qui pilotent des dossiers complexes en parallèle, avec des temps de résolution variables.</h2>
+                </div>
+
+                <div class="manifesto-grid">
+                    <p class="reveal" style="--delay: 40ms;">
+                        Quand une réponse tombe des semaines plus tard, il faut retrouver en quelques minutes
+                        l'historique du dossier, les décisions prises et la prochaine action.
+                    </p>
+                    <p class="reveal" style="--delay: 140ms;">
+                        TonPilote remet le dossier en mémoire : pièces, points de vigilance, arbitrages envisagés et liste de tâches.
+                    </p>
+                </div>
+            </section>
+
+            <section class="section">
+                <div class="section-header reveal" data-reveal-once="true">
+                    <div>
                         <p class="section-label">03 | Principe</p>
                         <p style="font-size: 1.08rem; color: var(--ink-soft); margin-top: 0.9rem;">L'IA n'est pas une affaire d'apps. Ni de prompts.</p>
                     </div>
@@ -801,8 +809,7 @@
                 </div>
 
                 <div class="manifesto-grid">
-                    <div aria-hidden="true"></div>
-                    <p class="reveal" style="--delay: 40ms;">
+                    <p class="reveal principle-body" style="--delay: 40ms;">
                         TonPilote part de votre réalité. Fichiers, historiques, arbitrages, documents dormants et actifs deviennent la matière brute sur laquelle l'IA se connecte.
                     </p>
                 </div>
